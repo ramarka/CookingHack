@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+  
+  <a class="navbar-brand" href="/">COOKING HACK</a>
+  
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/">HOME</a>
+    </li>
+  </ul>
+
+</nav>
+
+<hr>
+
+
+<!-- displays recipe card with name, serving size, image, url, and remove option -->
+ <div class="row card-group">
+    <div class="col-3"  *ngFor="let recipe of recipes; let i = index">
+        <div class="card">
+            <img class="card-img-top" src="{{recipe.recipe.image}}" alt="Card image" style="width:100%">
+            <div class="card-body">
+            <h4 class="card-title">{{recipe.recipe.label}}</h4>
+            <p class="card-text">Serving Size: {{recipe.recipe.yield}}</p>
+                <a href="{{recipe.recipe.url}}" class="btn btn-primary" target="_blank">Get Recipe</a>
+                <button type="button" class="btn btn-danger btn-xs" (click)="remove($index)">Remove</button>
+            </div>
+         </div>
+    </div>
+ </div> 
